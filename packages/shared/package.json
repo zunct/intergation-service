@@ -1,0 +1,17 @@
+{
+  "name": "@shared/utils",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@repo/typescript-config": "*",
+    "@repo/eslint-config": "*"
+  }
+}
