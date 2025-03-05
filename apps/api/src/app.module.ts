@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ServicesModule } from './services/services.module';
+import { ConnectionModule } from './connection/connection.module';
 
 @Module({
   imports: [
@@ -16,9 +18,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: process.env.DB_DATABASE,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true, // Set to false in production
+      logging: true
     }),
+    ServicesModule,
+    ConnectionModule,
   ],
-  controllers: [],
   providers: [],
 })
 export class AppModule {}

@@ -1,9 +1,23 @@
 {
-    "extends": "@repo/typescript-config/base.json",
-    "compilerOptions": {
-      "outDir": "dist",
-      "rootDir": "src"
-    },
-    "include": ["src"],
-    "exclude": ["node_modules", "dist"]
-  }
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": "./",
+    "paths": {
+      "@app/my-library": [
+        "libs/my-library/src"
+      ],
+      "@app/my-library/*": [
+        "libs/my-library/src/*"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
