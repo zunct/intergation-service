@@ -25,6 +25,9 @@ export class Service {
     @Column({ type: 'int', default: 0 })
     oauthRefreshTokenInterval: number;
 
+    @Column({ type: 'varchar', length: 255, nullable: true, default: null })
+    baseUrl: string | null;
+
     @Column({ type: 'boolean', default: false })
     deleted: boolean;
 

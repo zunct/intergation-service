@@ -1,6 +1,7 @@
 import { IsString, IsBoolean, IsOptional, IsEnum, IsUUID } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { ParameterType } from '../enums/parameter-type.enum';
+import { DataType } from 'services/enums/data-type.enum';
 
 export class CreateServiceParameterDto {
     @ApiProperty({
@@ -46,7 +47,7 @@ export class CreateServiceParameterDto {
         example: 'string'
     })
     @IsString()
-    data_type: string;
+    data_type: DataType;
 }
 
 export class UpdateServiceParameterDto extends CreateServiceParameterDto {

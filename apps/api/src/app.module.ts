@@ -22,6 +22,7 @@ import { ConnectionModule } from './connection/connection.module';
     }),
     ServicesModule,
     ConnectionModule,
+    ApiParameterModule,
   ],
   providers: [],
 })

@@ -17,5 +17,6 @@ import { ServiceEndpointsService } from './service-endpoints.service';
   imports: [TypeOrmModule.forFeature([Service,ServiceParameter,ServiceConfigurations,ServiceEndpoint])],
   controllers: [ServicesController,ServiceParametersController,ServiceConfigurationsController,ServiceEndpointsController],
   providers: [ServicesService,ServiceParametersService,ServiceConfigurationsService,ServiceEndpointsService],
+  exports: [ServiceEndpointsService]
 })
 export class ServicesModule {}

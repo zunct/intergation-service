@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn, JoinColumn } from 'typeorm';
 import { ParameterType } from 'services/enums/parameter-type.enum';
 import { ServiceEndpoint } from './service-endpoints.entity';
+import { DataType } from 'services/enums/data-type.enum';
 
 @Entity('service_parameters')
 export class ServiceParameter {
@@ -23,13 +24,12 @@ export class ServiceParameter {
     @Column({ type: 'boolean', default: false })
     required: boolean;
 
-    @Column({ type: 'varchar', length: 50, nullable: false })
-    data_type: string;
+    @Column({ type: 'enum', enum: DataType, nullable: false })
+    data_type: DataType;
 
     @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     created_at: Date;
 
     @UpdateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
     updated_at: Date;
-    param: { id: string; };
 }

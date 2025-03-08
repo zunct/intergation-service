@@ -25,7 +25,7 @@ export class ServiceEndpointsService {
     }
 
     async findOne(id: string): Promise<ServiceEndpoint> {
-        const endpoint = await this.serviceEndpointRepository.findOne({ where: { id } });
+        const endpoint = await this.serviceEndpointRepository.findOne({ where: { id },relations: ['service','parameters'] });
         if (!endpoint) {
             throw new NotFoundException(`Service endpoint with ID ${id} not found`);
         }
